@@ -2,6 +2,18 @@ TO  UPDATE A DATA
 UPDATE TABLNAME SET column1 = value1 WHERE condition;
 UPDATE STUDENT SET STUDENT_CONTACT = 133456 WHERE STU_ID= 11;
 
+-- SHOWING ALL DATABASES 
+   SHOW DATABASES;
+   
+---to delete only data in a table  we use truncate 
+   TRUNCATE TABLE STUDENT;
+--to delete entire structure of a table 
+   DROP TABLE STUDENT
+  -- to delete a paritular row in atable 
+   DELETE FROM STUDENT WHERE STD_ID='99';
+   --to delete entire data
+   DELETE DROM STUDENT
+
 -------AGGREGATE FUNCTIONS : 
 COUNT()
 --- it counts of all the rows in a specified colunm.
@@ -67,7 +79,17 @@ select * from salesman where commission between 0.23 and 0.43;
 
 select name from salesman where name like "k%";
 
+-- create a new column address, insert some data in that address column and display all those address as "salesman address" in descending order
+alter table salesman add address varchar(30);
 
-select * from salesman where commission between 0.23 and 0.43;
+UPDATE SALESMAN  SET ADDRESS= "KURNOOL" WHRERE SAL_ID = 123;
+UPDATE SALESMAN  SET ADDRESS= "ANATAPUR" WHRERE SAL_ID = 133;
+UPDATE SALESMAN  SET ADDRESS= "OOTY" WHRERE SAL_ID = 143;
+UPDATE SALESMAN  SET ADDRESS= "LAKNOL" WHRERE SAL_ID = 153;
+
+ALTER TABLE SALESMAN RENAME COLUMN ADDRESS TO SALESMAN_ADDRESS;  //renaming a column
+
+SELECT ADDRESS AS SALESMAN_ADDRESS FROM SALES_MAN ORDER BY ADDRESS DESC; 
+
 
 
