@@ -1,3 +1,7 @@
+TO  UPDATE A DATA 
+UPDATE TABLNAME SET column1 = value1 WHERE condition;
+UPDATE STUDENT SET STUDENT_CONTACT = 133456 WHERE STU_ID= 11;
+
 -------AGGREGATE FUNCTIONS : 
 COUNT()
 --- it counts of all the rows in a specified colunm.
@@ -31,6 +35,8 @@ ALTER  TABLE STUDENT  DROP COLUMN ADDRESS ;
 --TO change the datatype of particular colunm into other type AND SIZE
    ALTER TABLE TABLENAME  MODIFY  COLUMN CNMAE DATATYPE;
     ALTER TABLE STUDENT   MODIFY  COLUMN ADDRESS VARCHAR(78);
+---to rename a colunm 
+   UPDATE      
 
 CREATE DATABASE EXERCISE;
 SELECT * FROM CUSTOMER;
@@ -52,4 +58,16 @@ SELECT * FROM CUSTOMER WHERE  GRADE>=100;
 SELECT * FROM CUSTOMER WHERE city= 'KERELA' OR GRADE= NULL;
 SELECT * FROM CUSTOMER WHERE city= 'MUMBAI' OR GRADE>200;
 select name from customer where not city="MUMBAI"  or grade>200;
+
+SELECT * FROM ORDERS WHERE NOT ORD_DATE='2023-04-30' AND SALESMAN_ID>202 OR PURCH_AMT>1000;
+
+Select * from orders where not order_date ="2023-04-30" and (salesman_id>202 or purchase_amt>1000);
+
+select * from salesman where commission between 0.23 and 0.43;
+
+select name from salesman where name like "k%";
+
+
+select * from salesman where commission between 0.23 and 0.43;
+
 
