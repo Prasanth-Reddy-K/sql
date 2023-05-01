@@ -5,3 +5,14 @@
    create table student(student_id int primary key,student_name varchar(30) not null,student_contact int not null,student_dept varchar(20) not null );
 -- retriving data from table
      select * from student;
+-- insering data into a table
+     INSERT INTO table_name (column1, column2, column3, ...)VALUES (value1, value2, value3, ...);
+    INSERT INTO student (student_id, student_name, student_contact, student_dept)VALUES(29, PRASANTH, 1234, CSE);
+    INSERT INTO student (student_id, student_name, student_contact, student_dept)VALUES(12, RAHUL, 23244, EEE);
+    INSERT INTO student (student_id, student_name, student_contact, student_dept)VALUES(44, PRANITH,68686, ESE);
+    INSERT INTO student (student_id, student_name, student_contact, student_dept)VALUES(99, HARI, 16784, CSE);
+ --UPDATING TABLE 
+    UPDATE student set Student_contact = 576575 where student_id= 99;
+ -- copying one table into another table
+ create table test(student_id int primary key,student_name varchar(30) not null,student_contact int not null,student_dept varchar(20) not null );
+ INSERT INTO test select * from student;
