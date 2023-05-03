@@ -23,3 +23,35 @@ INSERT INTO staff VALUES(201, 'SWAPNA', 20, 20000), (202, 'SWATHI', 20, 30000), 
 
 INSERT INTO payment VALUES(300, '2023-05-2', 201, 10000), (302, '2023-05-1', 202, 15000), (304, '2023-05-2', 203, 10000), (303, '2023-05-7', 200, 40000)
 select s.id,name,age,amount from staff s, payment p where s.id = p.staff_id;
+alter table order1 add shipping_id int;
+alter table order1 drop column shipping_id;
+select * from order1;
+update order1 set shipping_id=1234 where order_id = 110;
+update order1 set shipping_id=8888 where order_id = 111;
+update order1 set shipping_id=9999 where order_id = 112;
+update order1 set shipping_id=1777 where order_id = 113;
+update order1 set shipping_id=4322 where order_id = 114;
+
+create table shipping(
+shipping_id int,name varchar(20));
+insert into shipping values(1234,'xxx'),(8888,'express'),
+(9999,'yyy'),(6666,'zzz'),(8598,'sss');
+select * from order1;
+select * from customer1;
+select * from shipping;
+
+
+-- joining of 3 tables order1,customer1,shippping
+
+select order1.order_id,customer1.cus_name,shipping.name from
+((order1 inner join customer1 on order1.customer_id=customer1.cus_id)
+inner join shipping on order1.shipping_id = shipping.shipping_id);
+
+
+-- left join of order1 and customer1 tables
+select customer1.cus_name,order1.order_id from customer1
+left join order1 on customer1.cus_id=order1.custome
+
+SELECT ORDERS1.ORDER_ID,CUSTOMER1.CUS_NAME,SHIPPING.NAME FROM 
+((ORDERS1 INNER JOIN CUSTOMER1 ON ORDERS1.ORDER_ID= CUSTOMER1.CUS_ID)
+INNER JOIN SHIPPING ON ORDERS1.SHIPPING_ID = SHIPPING.SHIPPING_ID);
