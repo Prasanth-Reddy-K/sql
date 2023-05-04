@@ -1,1 +1,7 @@
-
+--VIEWS
+a view is a virtual table
+CREATE VIEW view_name AS SELECT col1, coL2, FROM table_nameWHERE condition;
+CREATE VIEW CUSTOMER AS
+SELECT NAME, Contact
+FROM EMPLOYEE
+WHERE Country = 'INDIA';
